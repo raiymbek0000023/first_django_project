@@ -1,4 +1,4 @@
-from db.models import Product
+# from db.models import Product
 
 # product =Product(title = 'Product 2', price = 200)
 # product.save()
@@ -13,5 +13,5 @@ from db.models import Product
 # product.title = 'Product 1 updated'
 # product.save()
 
-product = Product.objects.all()
-product.delete()
+# product = Product.objects.all()
+# product.delete()

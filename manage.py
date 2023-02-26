@@ -1,4 +1,3 @@
-
 def init_django():
     import django
     from django.conf import settings
