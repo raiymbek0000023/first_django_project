@@ -1,6 +1,6 @@
 from django.db import models
 from manage import init_django
-
+import datetime
 
 init_django()
 
@@ -13,14 +13,19 @@ class Model(models.Model):
         abstract = True
 
 class Platform(Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255) 
+    # def __str__(self):
+    #     return self.title
 
 class Publisher(Model):
     title=models.CharField(max_length=255)
-
+    # def __str__(self):
+        # return self.title
+    
 class Genre(Model):
     title=models.CharField(max_length=255)
-
+    # def __str__(self):
+        # return self.title
 
 class Customer(Model):
     first_name=models.CharField(max_length=255)
@@ -28,10 +33,13 @@ class Customer(Model):
     email=models.CharField(max_length=255)
     phone_number=models.CharField(max_length=255)
     dateofBirth=models.DateField()
+
 class ContentRating(Model):
     title=models.CharField(max_length=255)
     ageLimit=models.IntegerField()
     description=models.CharField(max_length=255)
+    # def __str__(self):
+        # return self.title, self.ageLimit, self.description
 
 class Products(Model):
     title=models.CharField(max_length=255)
@@ -43,6 +51,8 @@ class Products(Model):
     contentrating=models.ForeignKey(ContentRating, on_delete=models.CASCADE)
     genre=models.ForeignKey(Genre, on_delete=models.CASCADE)
     isAviable=models.BooleanField()
+    # def __str__(self):
+        # return self.get_queryset, title, self.description, self.platform, self.relaeseDate, self.publisher, self.price, self.contentrating, self.isAviable
 
 class Sales(Model):
     products=models.ForeignKey(Products, on_delete=models.CASCADE)
