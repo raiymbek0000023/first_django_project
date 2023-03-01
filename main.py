@@ -16,13 +16,6 @@ for i in Genre_title:
     genre = Genre(title=i)
     genre.save()
 
-
-
-    raise Exception("code is not working")
-for i in c:
-    genre = ContentRating(description=i)
-        raise Exception("code is not working")
-
 content_title=['Sports', 'Platform', 'racing', 'Pole-Playing', 'Puzzle', 'Misc', 'action','shooter', 'fighting', '505_games']
 age_limit=[8, 9, 10, 12, 7, 14, 17, 18, 5, 19]
 descriptions=['gfdhbsgdvfh', 'vgef', 'wuvshfd', 'gsvdfh', 'ugwvjhf', 'uwgevjhdfb', 'rsgjvdfh', 'jtbhf', 'jhgdsfj', 'jbsbdf']
@@ -44,11 +37,6 @@ product.save()
 
 platform = Platform.objects.get(id=3)
 print(platform.__dict__)
-
-
-for i in range(1115, 1125):
-    product = ContentRating.objects.get(id=i)
-    product.delete()
 
 prod=Products(title = "Need for speed", 
               description = "smthing about game", 
@@ -120,10 +108,6 @@ prod=Products.objects.bulk_create([
 ])
 
 prod.save()
-
-
-
-
 
 prod=Products.objects.bulk_create([
     Products(title = "Fifa 10", 
@@ -255,7 +239,3 @@ prod=Products.objects.bulk_create([
               isAviable = True)
 ])
 prod.save()
-
-cont=Products.objects.get(id=41)
-cont.publisher=Publisher.objects.get(id=9)
-cont.save()
